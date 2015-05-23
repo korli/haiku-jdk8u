@@ -690,7 +690,7 @@ AC_DEFUN_ONCE([FLAGS_SETUP_COMPILER_FLAGS_FOR_JDK],
       if test -n "$HAS_GNU_HASH"; then
         LDFLAGS_JDK="${LDFLAGS_JDK} -Xlinker --hash-style=both "
       fi
-      if test "x$OPENJDK_TARGET_OS" = xlinux; then
+      if test "x$OPENJDK_TARGET_OS" = xlinux || test "x$OPENJDK_TARGET_OS" = xhaiku; then
         # And since we now know that the linker is gnu, then add:
         #   -z defs, to forbid undefined symbols in object files
         #   -z noexecstack, to mark stack regions as non-executable
