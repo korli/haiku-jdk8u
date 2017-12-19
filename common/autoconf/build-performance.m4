@@ -45,7 +45,7 @@ AC_DEFUN([BPERF_CHECK_CORES],
     NUM_CORES=`/usr/sbin/prtconf | grep "^Number Of Processors" | awk '{ print [$]4 }'`
     FOUND_CORES=yes
   elif test "x$OPENJDK_BUILD_OS" = xhaiku; then
-    NUM_CORES=`sysinfo -cpu | grep "running at" | awk '{print [$]1}'`
+    NUM_CORES=`sysinfo -cpu | grep "CPU" | wc -l`
     FOUND_CORES=yes
   elif test -n "$NUMBER_OF_PROCESSORS"; then
     # On windows, look in the env
